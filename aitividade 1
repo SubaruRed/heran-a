@@ -1,0 +1,21 @@
+class Animal {
+    String nome;
+
+    public void fazerSom() {
+        System.out.println("Som genérico de animal");
+    }
+}
+
+class Cachorro extends Animal {
+    @Override
+    public void fazerSom() {
+        System.out.println("O cachorro late");
+    }
+}
+
+public class Exercicio1 {
+    public static void main(String[] args) {
+        Cachorro c = new Cachorro();
+        c.fazerSom();
+    }
+}
