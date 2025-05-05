@@ -1,0 +1,29 @@
+class Pagamento {
+    public void realizarPagamento() {
+        System.out.println("Processando pagamento...");
+    }
+}
+
+class PagamentoCartao extends Pagamento {
+   
+    public void realizarPagamento() {
+        System.out.println("Pagamento com cartão aprovado!");
+    }
+}
+
+class PagamentoDinheiro extends Pagamento {
+   
+    public void realizarPagamento() {
+        System.out.println("Pagamento em dinheiro recebido!");
+    }
+}
+
+public class Exercicio4 {
+    public static void main(String[] args) {
+        Pagamento[] pagamentos = { new PagamentoCartao(), new PagamentoDinheiro() };
+
+        for (Pagamento p : pagamentos) {
+            p.realizarPagamento();
+        }
+    }
+}
