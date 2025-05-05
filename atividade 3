@@ -1,0 +1,50 @@
+class Funcionario {
+    String nome;
+    double salarioBase;
+
+    public Funcionario(String nome, double salarioBase) {
+        this.nome = nome;
+        this.salarioBase = salarioBase;
+    }
+
+    public double calcularSalario() {
+        return salarioBase;
+    }
+}
+
+class Gerente extends Funcionario {
+    double bonus;
+
+    public Gerente(String nome, double salarioBase, double bonus) {
+        super(nome, salarioBase);
+        this.bonus = bonus;
+    }
+
+   
+    public double calcularSalario() {
+        return salarioBase + bonus;
+    }
+}
+
+class Desenvolvedor extends Funcionario {
+    public Desenvolvedor(String nome, double salarioBase) {
+        super(nome, salarioBase);
+    }
+
+   
+    public double calcularSalario() {
+        return salarioBase * 1.10;
+    }
+}
+
+public class Exercicio3 {
+    public static void main(String[] args) {
+        Funcionario f = new Funcionario("João", 2000);
+        Gerente g = new Gerente("Maria", 3000, 1000);
+        Desenvolvedor d = new Desenvolvedor("Pedro", 2500);
+
+        System.out.println(f.nome + " - Salário: " + f.calcularSalario());
+        System.out.println(g.nome + " - Salário: " + g.calcularSalario());
+        System.out.println(d.nome + " - Salário: " + d.calcularSalario());
+    }
+}
